@@ -3,7 +3,7 @@ exports.getName = (req, res, next) => {
 
     req.getConnection((err, connection) => {
         if (err) return next(err)
-        var sql = `SELECT username,name FROM USERINFO WHERE username= ?  `;
+        var sql = `SELECT username,name FROM addtimessw.USERINFO WHERE username= ?  `;
         // var params = "%" + req.query.term + "%"
         connection.query("SET NAMES utf8");
         connection.query(sql, [username], (err, results) => {
