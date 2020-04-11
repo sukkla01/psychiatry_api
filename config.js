@@ -11,10 +11,10 @@ module.exports = {
 // module.exports = {
 //     secret: '1234',
 //     dbOption: {
-//         host: '203.157.82.73',
-//         user: 'sukkla01',
-//         password: '0810432245',
-//         database: 'spms',
+//         host: '192.168.1.13',
+//         user: 'admin',
+//         password: 'ictsrisangworn',
+//         database: 'psychiatry',
 //         port: '3306'
 //     }
 // }
