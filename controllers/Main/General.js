@@ -18,7 +18,7 @@ exports.getName = (req, res, next) => {
 
 exports.create = (req, res, next) => {
     var { body } = req
-    console.log(body[0].no1.chioce)
+    console.log(body[0])
     var post = {
         username: body[0].general[0].username,
         tname: body[0].general[0].tname,
@@ -31,11 +31,12 @@ exports.create = (req, res, next) => {
         no4: body[0].no4.chioce,
         no5: body[0].no5.chioce,
         no6: body[0].no6.chioce,
+        detail: body[0].detail.detail,
         d_update : moment().format('YYYY-MM-DD') + ' ' + moment().format('HH:mm:ss')
     }
     req.getConnection(function (err, connection) {
         connection.query("insert into quest set ?", post, (err, results) => {
-            if (err) return next(err)
+            if (err) return console.log(err)
             res.send({ status: 'ok', results })
         })
 
