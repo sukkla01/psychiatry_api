@@ -34,7 +34,10 @@ exports.create = (req, res, next) => {
         detail: body[0].detail.detail,
         d_update : moment().format('YYYY-MM-DD') + ' ' + moment().format('HH:mm:ss')
     }
+       
+
     req.getConnection(function (err, connection) {
+        connection.query("SET NAMES utf8"); 
         connection.query("insert into quest set ?", post, (err, results) => {
             if (err) return console.log(err)
             res.send({ status: 'ok', results })
